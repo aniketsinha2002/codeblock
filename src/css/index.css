@@ -1,0 +1,67 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  /* padding-bottom: 8px; */
+  background-color: #3a404d;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.main {
+  place-items: center;
+  height: calc(100vh - 20px);
+  display: grid;
+}
+
+.nav-items {
+  margin-top: 5px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4px;
+  font-size: smaller;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-items p {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding-right: 10px;
+  margin-right: 5px;
+}
+
+.copy-btn ion-icon {
+  font-size: 1.2rem;
+}
+
+/* Customizing scrollbar */
+pre::-webkit-scrollbar {
+  width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #3a404d;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #6c7383;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

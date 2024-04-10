@@ -1,7 +1,7 @@
-import Block from "./components/Block";
+import Home from "./components/Home";
 
 function App() {
-  return <Block />;
+  return <Home />;
 }
 
 export default App;
