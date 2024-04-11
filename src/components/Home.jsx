@@ -1,5 +1,7 @@
 import CodeHighlighter from "./CodeHighlighter";
 
+//WE can use this CodeHighlighter component along with required code to be passed as prop and render it
+
 function ExampleComponent() {
   const code = `
     import "../css/Block.css";

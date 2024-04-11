@@ -2,20 +2,37 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.container {
+/*LINE NUMBERS CSS FROM DOCUMENTATION ----- START*/
+pre {
+  counter-reset: line;
+  padding-left: 2.5em; /* Adjust as needed */
+}
+
+pre > code > [data-line]::before {
+  content: counter(line);
+  counter-increment: line;
+  position: absolute;
+  left: 0;
+  padding-left: 3em;
+  padding-right: 0em; /* Adjust as needed */
+  color: #999; /* Adjust line number color */
+}
+/*LINE NUMBERS CSS FROM DOCUMENTATION ----- END*/
+
+.cb-container {
   /* padding-bottom: 8px; */
   background-color: #3a404d;
   overflow: hidden;
   border-radius: 10px;
 }
 
-.main {
+.cb-main {
   place-items: center;
   height: calc(100vh - 20px);
   display: grid;
 }
 
-.nav-items {
+.cb-files-navbar {
   margin-top: 5px;
   padding-top: 10px;
   display: flex;
@@ -26,14 +43,14 @@ body {
   width: 100%;
 }
 
-.nav-items p {
+.cb-files-navbar p {
   margin: 0;
   color: white;
   text-decoration: none;
   padding-left: 10px;
 }
 
-.copy-btn {
+.cb-files-navbar-copy-btn {
   display: inline-flex;
   align-items: center;
   background-color: transparent;
@@ -44,11 +61,11 @@ body {
   margin-right: 5px;
 }
 
-.copy-btn ion-icon {
+.cb-files-navbar-copy-btn ion-icon {
   font-size: 1.2rem;
 }
 
-/* Customizing scrollbar */
+/* SCROLLBAR CUSTOMIZATION */
 pre::-webkit-scrollbar {
   width: 8px;
 }

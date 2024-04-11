@@ -10,7 +10,7 @@ import "../css/index.css";
 function CodeHighlighter({ code }) {
   const [highlightedCode, setHighlightedCode] = useState("");
 
-  //THEME OPTIONS
+  // THEME OPTIONS ARRAY
   const themeOptions = [
     { name: "Andromeeda", preview: "andromeeda" },
     { name: "Aurora X", preview: "aurora-x" },
@@ -65,9 +65,10 @@ function CodeHighlighter({ code }) {
           .use(remarkRehype)
           .use(rehypePrettyCode, {
             grid: false,
-            theme: `${themeOptions[0].preview}`, // Add theme option
-            keepBackground: false, // Add keepBackground option
-            defaultLang: "jsx", // Add defaultLang option
+            theme: `${themeOptions[0].preview}`, // Add theme option -> chnage 0,1,2... only the indexes for changing the theme
+            keepBackground: false, // Add keepBackground option -> keep it as false
+            defaultLang: "jsx", // Add defaultLang option -> which language will be there in codeblock set this acc to that
+            showLineNumbers: "true",
           })
           .use(rehypeStringify)
           .process(code);
@@ -82,12 +83,12 @@ function CodeHighlighter({ code }) {
   }, [code]);
 
   return (
-    <div className="main">
-      <div className="container">
-        <div className="nav-items">
-          <p className="heading">App.jsx</p>
+    <div className="cb-main">
+      <div className="cb-container">
+        <div className="cb-files-navbar">
+          <p className="cb-files-navbar-heading">App.jsx</p>
           <button
-            className="copy-btn"
+            className="cb-files-navbar-copy-btn"
             onClick={() => {
               navigator.clipboard.writeText(code);
             }}
@@ -97,6 +98,7 @@ function CodeHighlighter({ code }) {
         </div>
         <pre
           style={{
+            position: "relative",
             fontSize: "15px",
             lineHeight: "1.5",
             padding: "1rem",
